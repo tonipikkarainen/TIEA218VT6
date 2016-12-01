@@ -1,0 +1,16 @@
+{{extend 'pohja.html'}}
+
+<h2>Elokuvat</h2>
+<table>
+<tr>
+    <th>Elokuva</th>
+    <th>Vuokrausten lukumäärä</th>
+</tr>
+{{for e in elokuvat:}}
+    <tr>
+        <td><a href="{{=URL('uusielokuva',vars=dict(id=e['id']))}}">
+    {{=e['nimi']}} </a></td>
+        <td class="lkmtaulukko">{{=e['lkm']}} </td>
+    </tr>
+{{pass}}
+</table>

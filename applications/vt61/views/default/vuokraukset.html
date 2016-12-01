@@ -1,0 +1,21 @@
+{{extend 'pohja.html'}}
+<h2>Vuokraukset</h2>
+<ul>
+{{for j in jasenet:}}
+<li>
+  <a href="{{=URL('uusijasen',vars=dict(id=j['jasen'].id))}}">  {{=j['jasen'].nimi}} </a>
+    <ul>
+        {{for v in j['vuokraukset']:}}
+        <li>
+            <a href="{{=URL('uusivuokraus',vars=dict(id=v['vuokraus'].id))}}">
+            {{=v['elokuva'].nimi}} / {{=v['vuokraus'].vuokrauspvm}}
+               / {{=v['vuokraus'].palautuspvm}} /</a>
+        </li>
+        {{pass}}
+    </ul>
+</li>
+
+{{pass}}
+</ul>
+
+

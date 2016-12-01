@@ -1,0 +1,15 @@
+
+    <ul>
+        <h1>Vuokraukset / {{=jasen.nimi}}:</h1>
+        {{for v in vuokraukset:}}
+        <li>
+            {{=A(v['elokuva'].nimi+" " 
+             ,v['vuokraus'].vuokrauspvm," ",v['vuokraus'].palautuspvm, 
+            _href=URL('vuokrauslomake',vars=dict(id=v['vuokraus'].id)),cid="vuokrauslomake")}}
+           
+        </li>
+        {{pass}}
+    </ul>
+    <div id="vuokrauslomake">
+    </div>
+

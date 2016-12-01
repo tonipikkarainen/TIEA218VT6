@@ -1,0 +1,15 @@
+{{extend 'pohja.html'}}
+<ul>
+{{for j in jasenet:}}
+ <li>{{=A(j.nimi,_href=URL('naytavuokraukset',vars=dict(id=j.id)),cid="vuokraukset")}}</li>
+{{pass}}
+</ul>
+
+
+ <div id="vuokraukset">
+ 
+
+ </div>
+ 
+ 
+
